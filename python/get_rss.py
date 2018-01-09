@@ -1,5 +1,5 @@
 import feedparser
-import datetime
+from datetime import datetime
 
 # RSSのURL
 feed_url = 'https://www.nxworld.net/feed/'
@@ -13,9 +13,9 @@ for entry in feed_result.entries:
   published = entry.published_parsed
   # tuple型をunpack
   # date_time datetime型
-  date_time = datetime.datetime(*published[:6])
+  date_time = datetime(*published[:6])
   # datetime型からstringに変換 2017/11/29
-  date_str = datetime.datetime.strftime(date_time, "%Y/%m/%d")
+  date_str = datetime.strftime(date_time, "%Y/%m/%d")
   link = entry.link
 
   print(title)
